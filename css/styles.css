@@ -1,0 +1,439 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Apply border-box to all elements */
+}
+
+/* General Styles */
+body {        
+    min-width: 320px; /* Set the minimum width for the entire site */
+    color: #f5f5f5;
+    font-family: 'Cinzel', serif;
+    background-color: #000;
+    background-image: url('../images/dark-texture-bg-3.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    border-bottom: 2px solid teal;
+    align-items: center; /* Center the contents vertically */
+    padding: 20px 0; /* Remove side padding to align with logo */
+}
+
+header, footer {
+    width: 100%; /* Set to full width of the container */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    border-bottom: 2px solid teal; /* For header */
+    border-top: 2px solid teal; /* For footer */
+    padding: 20px 0; /* Adjust padding for top and bottom */
+    margin: 0; /* Remove default margins */
+}
+
+
+/* Main Content Styles */
+.main-content {
+    flex: 1; /* This allows the main content to take up the available space */
+    text-align: center;
+    margin: auto;
+}
+
+/* Adjusting the paragraph under "Contact Me" */
+.main-content p {
+    max-width: 800px; /* Set a max-width to make the paragraph wrap sooner */
+    margin: 0 auto 20px auto; /* Center the paragraph and add bottom margin */
+    padding: 0 20px; /* Add padding to the left and right */
+    line-height: 1.6; /* Improve readability with line height */
+}
+
+
+.main-content img {
+    border: 2px solid teal;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+    text-transform: uppercase; /* All caps */
+    margin-bottom: 20px; /* Add some spacing below the headings */
+}
+
+h1 {
+    color: #00d4c1; /* Teal color */
+    text-shadow: 0px 0px 8px rgba(0, 212, 193, 0.5); /* Shimmer effect */
+    font-size: 2.5em; /* Larger font size for main heading */
+}
+
+h2 {
+    color: #33E3D4; /* Lighter teal color */
+    font-size: 2em; /* Font size for subheadings */
+}
+
+h3 {
+    color: #00d4c1; /* Teal color for H3 */
+    font-size: 1.75em; /* Slightly smaller than H2 */
+}
+
+h4, h5, h6 {
+    color: #C0C0C0; /* Silvery color for smaller headings */
+    font-size: 1.5em; /* Decreasing font sizes for H4, H5, H6 */
+}
+
+/* Container for logo and nav */
+.nav-container {
+    width: calc(100% - 40px); /* Subtract padding from total width */
+    margin: 0 auto; /* Center the navbar within the header */
+    display: flex;
+    justify-content: space-between; /* Align logo and nav items */
+    align-items: center;
+    padding: 0 20px; /* Add padding on the sides */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+
+/* Align the logo to the right */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: auto; /* Keep this to push the logo to the left */
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.logo span {
+    color: teal;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+}
+
+/* Style for the nav list */
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* Reduce the gap between the nav items */
+    /* margin-left: auto; /* Keep this to push the logo to the right */
+}
+
+.nav-list li {
+    margin-left: 0; /* Remove default margin */
+}
+
+.nav-list a {
+    padding: 15px; /* Ensure enough padding for easy tapping */
+    display: block;
+    text-align: center;
+    color: teal;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    background-color: rgba(0, 212, 193, 0.2); /* Add slight hover effect */
+    border-radius: 5px;
+    color: #fff; /* Change text color on hover */
+}
+
+/* Simulate Hover Effect on Mobile with Active/Focus */
+.nav-list li a:hover,
+.nav-list a:active,
+.nav-list a:focus {
+    background-color: rgba(0, 212, 193, 0.2); /* Similar to hover effect */
+    border-radius: 5px;
+    color: #fff; /* Change text color when active/focused */
+}
+
+/* Hamburger Menu (initially hidden) */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: teal;
+    padding: 20px;
+}
+
+/* links and card containers */
+.links-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between the cards */
+    margin-top: 20px;
+    max-width: 960px; /* Ensure the container doesn't get too wide */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+.card {
+    background-color: #111;
+    color: teal;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 212, 193, 0.5);
+    text-align: center;
+    max-width: 300px; /* Max width for the card */
+    flex: 1 1 250px; /* Responsive behavior */
+    display: flex; /* Use Flexbox for alignment */
+    flex-direction: column; /* Arrange content in a column */
+    justify-content: space-between; /* Align the button to the bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 0px 20px rgba(0, 212, 193, 1);
+}
+
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00d4c1;
+}
+
+.card-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #f5f5f5;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: teal;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center; /* Center the button horizontally */
+}
+
+.card-link:hover {
+    background-color: #00d4c1;
+    color: #000;
+}
+
+/* Custom Horizontal Rules */
+.custom-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #00d4c1, teal);
+    margin: 20px auto; /* Center the hr by setting left and right margins to auto */
+    width: 50%; /* Set the width to 50% */
+}
+
+/* Contact Info List Styles */
+.contact-container {
+    text-align: center; /* Center the entire contact block */
+}
+
+.contact-info {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left; /* Keep the list items left-aligned */
+    display: inline-block; /* This allows the list to be centered within the container */
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+}
+
+.contact-info li::before {
+    content: '♦'; /* Diamond bullet */
+    position: absolute;
+    left: 0;
+    color: #33E3D4; /* Same lighter teal as H2 */
+    font-size: 1.2em;
+}
+
+.contact-info strong {
+    color: #33E3D4; /* Match the strong text color to H2 */
+}
+
+.contact-info a {
+    color: #00d4c1; /* Teal color for links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #33E3D4; /* Slightly lighter color on hover */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    color: teal;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid teal;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #00cfc9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Styles for Small Screens */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show hamburger menu on small screens */
+    }
+
+    .nav-list {
+        display: none; /* Hide the nav list by default on small screens */
+        flex-direction: column;
+        position: absolute;
+        top: 110px; /* Adjusted top position to avoid overlapping the logo */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-list.show {
+        display: flex; /* Show the nav list when hamburger is clicked */
+    }
+
+    .nav-list li {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .nav-list a:hover {
+        background-color: rgba(0, 212, 193, 0.2);
+    }
+
+    .main-content {
+        padding: 10px; /* Reduce padding to save space */
+    }
+
+    h1 {
+        font-size: 2em; /* Decrease font size for main heading */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Decrease font size for subheadings */
+        color: #33E3D4; /* Use the lighter teal color */
+    }
+
+    .card {
+        flex: 1 1 100%; /* Make cards take up full width */
+        max-width: 100%; /* Ensure cards are full width */
+        margin-bottom: 20px; /* Add spacing between cards */
+    }
+
+    .card-title {
+        font-size: 1.25em; /* Reduce title size slightly */
+    }
+
+    .card-description {
+        font-size: 0.9em; /* Reduce description size slightly */
+    }
+
+    .custom-hr {
+        width: 80%; /* Make hr a bit wider on small screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align nav items to the left */
+    }
+
+    nav a {
+        padding: 10px; /* Add more padding to make links easier to tap */
+        font-size: 1em; /* Adjust font size for better readability */
+    }
+
+    .links-container {
+        gap: 15px; /* Reduce gap between links */
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .nav-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger menu on small screens */
+        padding: 10px;
+    }
+
+    .nav-list {
+        display: none; /* Hide the nav list by default on small screens */
+        position: absolute;
+        top: 60px; /* Position the dropdown below the header */
+        left: 0;
+        width: 100%; /* Ensure it takes full width */
+        padding: 10px 0;
+    }
+
+    .nav-list.show {
+        display: flex; /* Show the nav list when hamburger is clicked */
+        flex-direction: column;
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        padding: 10px; /* Ensure padding for easier tap targets */
+    }
+
+    .main-content {
+        padding: 10px; /* Reduce padding for better fit */
+    }
+
+    h1 {
+        font-size: 1.75em; /* Adjust font size for better fit */
+    }
+
+    h2 {
+        font-size: 1.25em; /* Adjust subheading size */
+    }
+
+    .card {
+        max-width: 100%; /* Make cards full width */
+        margin-bottom: 15px; /* Add spacing between cards */
+    }
+
+    .custom-hr {
+        width: 70%; /* Adjust hr width for smaller screens */
+    }
+}
