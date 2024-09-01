@@ -14,7 +14,7 @@ nav.innerHTML = `
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="icons/site-spyder-logo-4.webp" alt="SiteSpyder" class="profile-photo" width="60" height="auto">
-            <span>Penny’s Portfolio & Projects</span>
+            <span>Penny’s Portfolio</span>
         </a>
         <div class="menu-icon" onclick="toggleMenu()">
             &#9776; <!-- Hamburger icon -->
